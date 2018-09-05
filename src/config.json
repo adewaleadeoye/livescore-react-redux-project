@@ -1,0 +1,6 @@
+{
+    "url": "https://apifootball.com/api/",
+    "livescore": "get_events",
+    "apiKey":"cd006a358218a1f9ac2f375d876c3b56d90a7d1ddf67dff2f33114e5db3d7785",
+    "leagueId": 63
+}
