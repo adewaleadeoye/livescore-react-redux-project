@@ -15,12 +15,13 @@ const apiMiddleware = store => next => action => {
         // respond back to the user
         // by dispatching the original action without
         // the meta object
+        console.log(matches)
         let newAction = Object.assign({}, action, {
           payload: matches
         });
         delete newAction.meta;
         store.dispatch(newAction);
-      })
+      }).catch(e => console.log(`An error occured: ${e}`))
   }
   
   export default apiMiddleware

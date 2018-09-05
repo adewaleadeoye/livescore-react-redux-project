@@ -9,6 +9,7 @@ const MatchTeam = ({team_flag,team_name}) => (
         <img 
             src={team_flag} 
             className="" 
+            alt=""
         />
         </div>
         <div className='match-team-name'>

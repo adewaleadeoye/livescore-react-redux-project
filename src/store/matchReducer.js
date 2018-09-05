@@ -1,15 +1,12 @@
-import * as types from './types';
+import {FETCH_MATCHES} from './types';
 
-export const initialState = {
-    matches: {}
-}
-
-export const matchReducer = (state = initialState, action) => {
+const matchReducer = (state = [], action) => {
     switch(action.type) {
-        case types.FETCH_MATCHES:
-          return { ...state, matches: action.payload}
+        case FETCH_MATCHES:
+            return [...state, action.payload];
         default:
           return state;
     }
 }
 
+export default matchReducer;

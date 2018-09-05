@@ -1,7 +1,6 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 /.vscode
-/src/views/__tests__/Match.test.js
 # dependencies
 /node_modules
 

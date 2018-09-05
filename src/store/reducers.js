@@ -1,13 +1,9 @@
 import { combineReducers } from 'redux';
 
-import * as matchReducer from './matchReducer';
+import matchReducer from './matchReducer';
 
-export const rootReducer = combineReducers({
-    matchReducer:matchReducer.matchReducer
+const rootReducer = combineReducers({
+    matches:matchReducer
 })
 
-export const initialState = combineReducers({
-    initialState:matchReducer.initialState
-})
-  
 export default rootReducer

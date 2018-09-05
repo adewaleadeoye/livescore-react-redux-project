@@ -6,7 +6,6 @@ import MatchTeam from '../components/MatchTeam';
 import MatchTeamScore from '../components/MatchTeamScore';
 import MatchStatus from '../components/MatchStatus';
 
-import PropTypes from 'prop-types';
 import './Match.css'
 
 const mapStateToProps = state => {
@@ -16,29 +15,30 @@ const mapStateToProps = state => {
 }
   
 const mapDispatchToProps = dispatch => ({
-fetchAllMatches: (opts={}) => dispatch(fetchMatches(opts))
+    fetchAllMatches: (opts={}) => dispatch(fetchMatches(opts))
 })
 
 class Match extends Component {
 
     componentDidMount() {
-        this.props.fetchAllMatches;
+        this.props.fetchAllMatches();
     }
 
     render() {
         return (
             <div>
-                {matches.map(match => (
+                {this.props.matches.map(match => (
                     <div className="match">
-                        <MatchTeam />
-                        <MatchStatus />
-                        <MatchTeamScore />
+                        <MatchTeam key={`${match.id}-team`} />
+                        <MatchStatus key={`${match.id}-status`} />
+                        <MatchTeamScore key={`${match.id}-score`} />
                     </div>
                 ))}
             </div>
         )
     }
 }
+
 
 export default connect(
     mapStateToProps,
